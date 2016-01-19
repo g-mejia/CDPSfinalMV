@@ -27,7 +27,7 @@ os.system("vnx -f p7.xml -v --create")
 
 #configuracion de servidores de disco(nas)
 
-os.system("lxc-attach -n nas1 -- gluster peer probe 10.1.3.21")
+#os.system("lxc-attach -n nas1 -- gluster peer probe 10.1.3.21")
 os.system("lxc-attach -n nas1 -- gluster peer probe 10.1.3.22")
 os.system("lxc-attach -n nas1 -- gluster peer probe 10.1.3.23")
 os.system("lxc-attach -n nas1 -- gluster volume create nas replica 3 nas1:/nas nas2:/nas nas3:/nas force")
@@ -88,10 +88,10 @@ for n in range (2, 5):
 os.system("lxc-attach -n s1 -- rm -rf /etc/hosts")
 os.system("lxc-attach -n s1 -- wget https://raw.githubusercontent.com/javier-diezmart/CDPSfinalMV/master/hosts/s1/hosts -P /etc")
 
-os.system("lxc-attach -n s1 -- git clone https://github.com/javier-diezmart/CDPSfyMain")
+#os.system("lxc-attach -n s1 -- git clone https://github.com/javier-diezmart/CDPSfyMain")
 #npm install en la MV
-os.system("lxc-attach -n s1 -- mkdir -p /data/db")
-os.system("lxc-attach -n s1 -- chmod +rwx /data/db")
+#os.system("lxc-attach -n s1 -- mkdir -p /data/db")
+#os.system("lxc-attach -n s1 -- chmod +rwx /data/db")
 
 #os.system("lxc-attach -n s1 -- mongodb > /dev/null 2>&1 &") arrancar la base de datos
 #hayquehacer el npm start
